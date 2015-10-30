@@ -1,0 +1,217 @@
+//@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import "variables.less";
+@import "mixins.less";
+
+/* ----------------------------------------------------*/
+/* BASIC SETUP */
+/* ----------------------------------------------------*/
+html {
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    font-size: @font-size-base;
+    background-color: @darkGray;
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
+
+::-webkit-input-placeholder {
+   color: @lightGray;
+}
+
+:-moz-placeholder { 
+   color: @lightGray;
+}
+
+::-moz-placeholder {  
+   color: @lightGray;
+}
+
+:-ms-input-placeholder {  
+   color: @lightGray;
+}
+
+/* ----------------------------------------------------*/
+/* REUSABLE COMPONENTS */
+/* ----------------------------------------------------*/
+h1 {   
+    color: #ffffff;
+    margin-bottom: 40px;  
+    font-family: 'Merriweather', serif;
+    font-size: @font-size-h1;  
+    font-style: italic;
+}
+
+.row {
+    margin: 0;
+}
+
+input,
+select, 
+button {
+    width: 100%;
+    padding: 7px;
+    //color: @lightGray;
+    color: #ffffff;
+    background-color: @mediumGray;
+    border: @basic-border;
+    margin-bottom: 30px;
+    height: 63px;
+    font-size: @font-size-medium;
+    text-transform: uppercase;    
+}
+
+
+select:required:invalid {
+    color: @lightGray;
+
+    option[value=""][disabled] {
+      display: none;
+    }
+    
+    option {
+      color: #ffffff;
+    }
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+button {
+    color: #ffffff;
+    background-color: @darkGray;
+    margin-top: 100px;
+    font-size: @font-size-base;
+}
+
+label {
+    color: #ffffff;
+}
+
+.col-md-4, 
+.col-md-8,
+.col-md-6 {
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------------------------------------------*/
+/* HEADER */
+/* ----------------------------------------------------*/
+header {
+    color: @aquaMarine; 
+    margin-bottom: 70px;
+    p {
+        width: 60%;
+    }
+}
+
+/* ----------------------------------------------------*/
+/*  ITEM LIST/ADD FORM */
+/* ----------------------------------------------------*/
+
+.item-lists {
+    text-transform: uppercase;
+    
+    .col-md-8 {
+        border: @basic-border;
+    }  
+    
+    .add-item-header {
+        .linear-gradient(@lightBlue, @darkBlue);  
+        height: 60px;
+        text-align: center;
+        margin: 0 0 20px 0;
+        padding-top: 15px;
+        color: #ffffff;
+    }
+    
+    /* FORM */
+    .item-form {
+        margin-right: 10px;
+        
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        
+        .select-box,
+        .search-box {
+            position: relative;
+        }
+        
+        .fa-caret-down,
+        .fa-search {
+            .icon-font;
+        }
+    }  
+    
+    /* ITEM LIST */
+    .item-list { 
+        
+        border-bottom: none;
+        
+        .list-header,
+        li {
+            
+            padding: 15px;
+        }
+        
+        .list-header {
+            .linear-gradient(@lightBlue, darken(@darkBlue, 10%));
+            color: #ffffff;
+        }
+        
+        ul {
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        li {
+            list-style: none;
+            
+            .delete {
+                .border-radius(5px);
+                cursor: pointer;
+                float: right;
+                font-size: @font-size-small;
+                font-weight: bold;
+                padding: 4px 8px;                
+            }
+            
+        }
+        
+        li:nth-child(odd)  {
+            background-color: @lightGray;
+            color: @darkGray;
+            
+            .delete {
+                border: 1px solid @darkGray;
+            }
+        }
+        
+        li:nth-child(even)  {
+            background-color: @mediumGray;
+            color: #ffffff;
+            
+            .delete {                
+                border: 1px solid #ffffff;
+            }
+        }
+    }
+    
+    .item-list-col1 {
+        border-left: none;
+        border-right: @basic-border;
+    }
+    .item-list-col2 {
+        border-left: @basic-border;
+        margin-left: -5px;
+        border-right: none;
+    }
+}
+
+@import "queries.less";
