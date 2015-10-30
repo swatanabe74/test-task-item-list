@@ -1,5 +1,9 @@
 EA PULSE item list test task
 
+- Bootstrap and LESS css pre-processor are used
+- Optional is not implemented
+
+
 Functionality:
 
     “Add an item” area functionality:
@@ -31,12 +35,12 @@ Requirements:
 
     Please use AngularJS for Javascript functionality
 
-    Please use a CSS framework of your choice  [[[<---- Bootstrap and LESS css pre-processor are used]]]
+    Please use a CSS framework of your choice  
 
     The page should be SEO friendly 
 
 
-Optional (not required):  [[[<-- Not implemented]]]
+Optional (not required): 
 
     Use local storage to persist the entered items in the browser
     Use Compass to generate your CSS
